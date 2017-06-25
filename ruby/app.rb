@@ -51,7 +51,7 @@ module Isucon4
       end
 
       def attempt_login(login, password)
-        user = db.xquery('SELECT * FROM users WHERE login = ?', login).first
+        user = db.xquery('SELECT * FROM users WHERE login = ? LIMIT 1', login).first
 
         if ip_banned?
           login_log(false, login, user ? user['id'] : nil)
