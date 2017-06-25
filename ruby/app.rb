@@ -136,7 +136,7 @@ module Isucon4
     end
 
     get '/' do
-      erb :index, layout: :base
+      erubis :index, layout: :base
     end
 
     post '/login' do
@@ -162,7 +162,7 @@ module Isucon4
         flash[:notice] = "You must be logged in"
         redirect '/'
       end
-      erb :mypage, layout: :base
+      erubis :mypage, layout: :base
     end
 
     get '/report' do
